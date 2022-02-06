@@ -2,6 +2,9 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 
+import "./database/connection";
+import usersRoutes from "./routes/users";
+import config from "./configuration/configuration";
 
 export default class App{
 
@@ -13,7 +16,7 @@ export default class App{
 
     constructor(){
         this.app = express();
-        this.port = process.env.PORT || '3000';
+        this.port = config.APP.PORT;
         this.dbConnection();
         this.middlewares();
         this.routes();
@@ -30,7 +33,7 @@ export default class App{
 
     routes(): void{
         // Routes register
-        //this.app.use( this.apiPaths.users, userRoutes );
+        this.app.use( this.apiPaths.users, usersRoutes );
     }
 
     async dbConnection(): Promise<void>{    

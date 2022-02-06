@@ -1,5 +1,7 @@
 import { Schema, Document, model } from "mongoose";
 
+import { IAPIResponse } from "../common/IAPIResponse";
+
 export interface IUser extends Document {
     name: string,
     lastname: string,
@@ -43,4 +45,4 @@ const userSchema = new Schema({
     }
 });
 
-export default model<IUser>("User", userSchema);
+export default model<IAPIResponse<IUser>>("User", userSchema);
