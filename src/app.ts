@@ -4,12 +4,12 @@ import morgan from 'morgan';
 
 import "./database/connection";
 import usersRoutes from "./routes/users";
-import config from "./configuration/configuration";
+import config from "./configuration/config";
 
 export default class App{
 
     private app: Application;
-    private port: string;
+    private readonly port: string;
     private apiPaths = {
         users: '/api/users'
     }
@@ -17,7 +17,6 @@ export default class App{
     constructor(){
         this.app = express();
         this.port = config.APP.PORT;
-        this.dbConnection();
         this.middlewares();
         this.routes();
     }
@@ -34,10 +33,6 @@ export default class App{
     routes(): void{
         // Routes register
         this.app.use( this.apiPaths.users, usersRoutes );
-    }
-
-    async dbConnection(): Promise<void>{    
-        //TODO: connect singleton
     }
 
     listen(): void{
