@@ -1,4 +1,4 @@
-import App from "./app";
+import App from "./App";
 
 const server = new App();
 server.listen(); 
