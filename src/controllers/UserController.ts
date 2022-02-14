@@ -1,8 +1,8 @@
 import {Request, Response} from "express";
 
-import User from "../models/users";
+import User from "../models/UserModel";
 import {ResponseCodes} from "../common/ResponseCodes";
-import Responses from "../helpers/Responses";
+import Responses from "../helpers/ResponseHelper";
 
 
 export const getUsers = async (req: Request, res: Response) => {

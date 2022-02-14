@@ -1,6 +1,6 @@
 import {IErrorResponse, Response} from "../common/Response";
 
-export default class Responses {
+export default class ResponseHelper {
 
     code: number;
     description: string;

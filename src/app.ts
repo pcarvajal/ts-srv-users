@@ -3,8 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 
 import "./database/connection";
-import usersRoutes from "./routes/users";
-import config from "./configuration/config";
+import usersRoutes from "./routes/UserRoutes";
+import config from "./configuration";
 
 export default class App{
 

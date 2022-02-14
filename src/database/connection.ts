@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import config from "../configuration/config";
+import config from "../configuration/index";
 
 
 mongoose.connect(config.DB.URI);
