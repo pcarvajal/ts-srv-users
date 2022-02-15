@@ -1,6 +1,6 @@
 import {Request, Response} from "express";
 
-import {ResponseCodes} from "../../entity/ResponseCodes";
+import {ResponseCodes} from "../../entities/ResponseCodesEnum";
 import Responses from "../../helpers/ResponseHelper";
 import { UserRepository } from "../../repository/UserRespository";
 import UserSchema from "../../schemas/UserSchema";
