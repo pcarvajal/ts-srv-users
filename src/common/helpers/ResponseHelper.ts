@@ -1,4 +1,4 @@
-import {IErrorResponse, Response} from "../../entity/common/Response";
+import {IErrorResponse, GenericResponse} from "../../entity/common/Response";
 
 export default class ResponseHelper {
 
@@ -10,7 +10,7 @@ export default class ResponseHelper {
         this.description = description;
     }
 
-    successResponse(data: any): Response<any>{
+    successResponse(data: any): GenericResponse<any>{
         return {
             code: this.code,
             description: this.description,

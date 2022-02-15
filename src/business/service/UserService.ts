@@ -4,7 +4,6 @@ import {ResponseCodes} from "../../entity/common/ResponseCodes";
 import Responses from "../../common/helpers/ResponseHelper";
 import { UserRepository } from "../../backend/repository/UserRespository";
 import UserSchema from "../../backend/schemas/UserSchema";
-import { IUserEntiy } from "../../backend/models/IUserModel";
 
 export class UserService{
 
@@ -14,18 +13,7 @@ export class UserService{
         this.userRepository = new UserRepository();
     }
 
-    public async createUser(req: Request, res: Response){
-    
-        const userEmail = await this.userRepository.find({email: req.body.email});
-        const userPhone = await this.userRepository.find({phone: req.body.phone});
-    
-        if (userEmail) {
-            return res.status(409).json({msg: "User email already exist."});
-        }
-    
-        if (userPhone) {
-            return res.status(409).json({msg: "User phone already exist."});
-        }
+    async createUser(req: Request, res: Response){
     
         const newUser = new UserSchema(req.body);
 

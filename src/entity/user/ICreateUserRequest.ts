@@ -1,6 +1,6 @@
 import { Request } from "express";
 
-export interface ICreateUserRequest extends Request{
+export interface ICreateUserRequest{
     name: string,
     lastname: string,
     lastname2: string,
