@@ -3,8 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from "mongoose";
 
-import usersRoutes from "./facade/routes/UserRoutes";
-import config from "./common/configuration";
+import { UserRoutes } from "./config/routes/UserRoutes";
+import config from "./config/constants/Constants";
 
 export default class App{
 
@@ -34,7 +34,7 @@ export default class App{
 
     routes(): void{
         // Routes register
-        this.app.use( this.apiPaths.users, usersRoutes );
+        this.app.use( this.apiPaths.users, new UserRoutes().routes );
     }
 
     database(): void{

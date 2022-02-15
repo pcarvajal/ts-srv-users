@@ -1,9 +1,9 @@
 import {Request, Response} from "express";
 
-import {ResponseCodes} from "../../entity/common/ResponseCodes";
-import Responses from "../../common/helpers/ResponseHelper";
-import { UserRepository } from "../../backend/repository/UserRespository";
-import UserSchema from "../../backend/schemas/UserSchema";
+import {ResponseCodes} from "../../entity/ResponseCodes";
+import Responses from "../../helpers/ResponseHelper";
+import { UserRepository } from "../../repository/UserRespository";
+import UserSchema from "../../schemas/UserSchema";
 
 export class UserService{
 
