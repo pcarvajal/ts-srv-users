@@ -1,6 +1,5 @@
-import { Document } from "mongoose";
 
-export interface IUserEntiy extends Document{
+export interface IUser {
     name: string,
     lastname: string,
     lastname2: string,

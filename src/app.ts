@@ -3,9 +3,8 @@ import cors from 'cors';
 import morgan from 'morgan';
 import mongoose from "mongoose";
 
-import "./database/connection";
-import usersRoutes from "./routes/UserRoutes";
-import config from "./configuration";
+import usersRoutes from "./facade/routes/UserRoutes";
+import config from "./common/configuration";
 
 export default class App{
 

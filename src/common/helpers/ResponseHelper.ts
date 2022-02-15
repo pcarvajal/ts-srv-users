@@ -1,4 +1,4 @@
-import {IErrorResponse, Response} from "../common/Response";
+import {IErrorResponse, Response} from "../../entity/common/Response";
 
 export default class ResponseHelper {
 
