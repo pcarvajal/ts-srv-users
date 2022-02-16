@@ -3,7 +3,7 @@ import { validationResult } from "express-validator";
 import {ResponseCodes} from "../entities/ResponseCodesEnum";
 import Responses from "../helpers/ResponseHelper";
 
-export class ExpressValidator{
+export class ExpressValidatorRequest{
 
     constructor(){}
 
