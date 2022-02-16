@@ -2,7 +2,7 @@ import express from "express";
 
 import { UserController } from "../../controllers/UserController";
 import { ExpressValidator } from "../middlewares/ExpressValidator";
-import { createUserSchema } from "../validators/createUserValidator";
+import { createUserSchema } from "../validators/user/createUserValidator";
 
 var router = express.Router();
 export class UserRoutes {
