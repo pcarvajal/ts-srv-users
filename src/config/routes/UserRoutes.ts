@@ -1,6 +1,8 @@
 import express from "express";
 
 import { UserController } from "../../controllers/UserController";
+import { ExpressValidator } from "../middlewares/ExpressValidator";
+import { createUserSchema } from "../validators/createUserValidator";
 
 var router = express.Router();
 export class UserRoutes {
@@ -12,7 +14,7 @@ export class UserRoutes {
     get routes () : express.Router {
         
         var controller = this.userController;
-        router.post("/", controller.createUser);
+        router.post("/",createUserSchema, new ExpressValidator() , controller.createUser);
 
         return router;
     }

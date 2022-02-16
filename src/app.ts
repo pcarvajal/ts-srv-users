@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 
 import { UserRoutes } from "./config/routes/UserRoutes";
 import config from "./config/constants/Constants";
+import { MiddlewaresBase } from "./config/middlewares/base/MiddlewaresBase";
 
 export default class App{
 
@@ -24,12 +25,7 @@ export default class App{
     }
 
     middlewares(): void{
-        // Cross domain requests
-        this.app.use(cors());
-        // Serialize json request
-        this.app.use(express.json());
-        // Request logger
-        this.app.use(morgan('dev'));
+        this.app.use(MiddlewaresBase.configuration);
     }
 
     routes(): void{
