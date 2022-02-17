@@ -1,4 +1,9 @@
 import { body } from 'express-validator';
+import { Request } from 'express';
+
+import { UserCustomValidators } from "./custom/UserCustomValidators";
+
+const userCustomValidators: UserCustomValidators = new UserCustomValidators(); 
 
 export const schema = [
     body('name')
@@ -11,9 +16,11 @@ export const schema = [
         .isString()
         .isLength({ min:1 }),
     body('email')
-        .isEmail(),
+        .isEmail()
+        .custom(value => userCustomValidators.isValidEmailUser(value)),
     body('phone')
         .isString()
         .isLength({ min:9 })
+        .custom(value => userCustomValidators.isValidPhoneUser(value))
 ]
 export {schema as createUserSchema}

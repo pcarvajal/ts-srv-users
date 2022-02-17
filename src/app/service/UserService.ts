@@ -1,9 +1,9 @@
 import {Request, Response} from "express";
 
-import {ResponseCodes} from "../../../config/entities/ResponseCodesEnum";
-import Responses from "../../../config/helpers/ResponseHelper";
-import { UserRepository } from "../../repository/UserRespository";
-import UserSchema from "../../schemas/UserSchema";
+import {ResponseCodes} from "../../config/entities/ResponseCodesEnum";
+import Responses from "../../config/helpers/ResponseHelper";
+import { UserRepository } from "../repository/UserRespository";
+import UserSchema from "../schemas/UserSchema";
 
 export class UserService{
 

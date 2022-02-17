@@ -1,4 +1,4 @@
-import { Schema, model, Document } from "mongoose";
+import { Schema, model } from "mongoose";
 
 import { IUserModel } from "../models/IUserModel";
 
@@ -45,4 +45,5 @@ class UserSchema {
      
   }
 
-export default model<IUserModel>("Users", UserSchema.schema);
+var schema = model<IUserModel>("Users", UserSchema.schema);
+export = schema;
