@@ -1,34 +1,31 @@
 import { UserRepository } from "../../../../app/repository/UserRespository";
 
-export class UserCustomValidators{
+export class UserCustomValidators {
+  constructor() {}
 
-    constructor(){
+  async isValidEmailUser(value: any) {
+    const userRepository = new UserRepository();
+    console.log("Entra a validar");
+
+    const user = await userRepository.find({ email: value });
+
+    if (Array.isArray(user) && user.length > 0) {
+      return Promise.reject("Email already exist!");
     }
 
-    async isValidEmailUser(value: any){
+    return Promise.resolve();
+  }
 
-        const userRepository = new UserRepository();
-        console.log("Entra a validar");
-        
-        const user = await userRepository.find({ email: value });
+  async isValidPhoneUser(value: any) {
+    const userRepository = new UserRepository();
+    console.log("Entra a validar");
 
-        if(Array.isArray(user) && user.length > 0){
-            return Promise.reject('Email already exist!');
-        }
+    const user = await userRepository.find({ phone: value });
 
-        return Promise.resolve();
+    if (Array.isArray(user) && user.length > 0) {
+      return Promise.reject("Phone already exist!");
     }
 
-    async isValidPhoneUser(value: any){
-        const userRepository = new UserRepository();
-        console.log("Entra a validar");
-        
-        const user = await userRepository.find({ phone: value });
-
-        if(Array.isArray(user) && user.length > 0){
-            return Promise.reject('Phone already exist!');
-        }
-
-        return Promise.resolve();
-    }
+    return Promise.resolve();
+  }
 }
