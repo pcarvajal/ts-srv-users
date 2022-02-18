@@ -17,12 +17,14 @@ export default class ResponseHelper {
 		};
 	}
 
-	errorResponse(error: unknown ): IErrorResponse {
-		let errorMessage = "";
+	errorResponse(error: any ): IErrorResponse {
+		let errorMessage;
 
 		if (error instanceof Error) {
 			errorMessage = error.message;
 		} else if (typeof error === "string" ) {
+			errorMessage = error;
+		}else{
 			errorMessage = error;
 		}
 

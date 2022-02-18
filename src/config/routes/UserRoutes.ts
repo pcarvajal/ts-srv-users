@@ -51,10 +51,28 @@ export class UserRoutes {
 		 *          - phone
 		 *       example:
 		 *         name: Jhon
-		 *         lastname : Doe
+		 *         lastname: Doe
+		 *         lastname2: Doe 
 		 *         email: jhondoe@email.com
-		 *         phone: 99999999
-		 */
+		 *         phone: "999999999"
+		 *     Error:
+		 *       type: object
+		 *       properties:
+		 *         code:
+		 *           type: number
+		 *           description: Error code
+		 *         error:
+		 *           type: string
+		 *           description: Error
+		 *         description:
+		 *           type: object
+		 *           description: Error trace
+		 *       example:
+		 *         code: -1
+		 *         error: Validation Error
+		 *         description : Email must be valid!
+         */
+
 
 		/**
 		 *	@swagger
@@ -77,6 +95,22 @@ export class UserRoutes {
 		 *                type: array
 		 *                items:
 		 *                  $ref: '#/components/schemas/Users'
+		 *        400:
+		 *          description: Validation error
+		 *          content:
+		 *            application/json:
+		 *              schema:
+		 *                type: array
+		 *                items:
+		 *                  $ref: '#/components/schemas/Error'
+		 *        500:
+		 *          description: Validation error
+		 *          content:
+		 *            application/json:
+		 *              schema:
+		 *                type: array
+		 *                items:
+		 *                  $ref: '#/components/schemas/Error'
 		 */
 		router.post(
 			"/users", 
