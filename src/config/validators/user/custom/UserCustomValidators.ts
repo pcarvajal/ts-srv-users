@@ -4,7 +4,6 @@ export class UserCustomValidators {
 
 	async isValidEmailUser(value: any) {
 		const userRepository = new UserRepository();
-		console.log("Entra a validar");
 
 		const user = await userRepository.find({ email: value });
 
@@ -17,7 +16,6 @@ export class UserCustomValidators {
 
 	async isValidPhoneUser(value: any) {
 		const userRepository = new UserRepository();
-		console.log("Entra a validar");
 
 		const user = await userRepository.find({ phone: value });
 

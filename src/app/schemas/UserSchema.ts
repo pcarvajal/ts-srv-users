@@ -37,7 +37,11 @@ class UserSchema {
 				unique: true,
 				trim: true,
 			},
-		});
+		},
+		{
+			versionKey: false,
+		}
+		);
 
 		return schema;
 	}
