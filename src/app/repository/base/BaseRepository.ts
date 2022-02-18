@@ -1,5 +1,5 @@
 import { Document, FilterQuery, Model, Mongoose } from "mongoose";
-import { IRead, IWrite } from "../interfaces/base/IBaseRespository";
+import { IRead, IWrite } from "./interfaces/IBaseRespository";
 
 export abstract class BaseRepository<T extends Document> implements IRead<T>, IWrite<T>{
 

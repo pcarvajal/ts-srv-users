@@ -1,6 +1,4 @@
 import express, { Application } from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
 import mongoose from "mongoose";
 
 import { UserRoutes } from "./config/routes/UserRoutes";
@@ -29,7 +27,6 @@ export default class App{
     }
 
     routes(): void{
-        // Routes register
         this.app.use( this.apiPaths.users, new UserRoutes().routes );
     }
 
@@ -49,7 +46,6 @@ export default class App{
     }
 
     listen(): void{
-        // Start server listen
         this.app.listen( this.port, () => {
             console.info(`Server running on port ${this.port}`)
         })

@@ -1,12 +1,6 @@
-import { CustomValidator, Location } from 'express-validator';
-import { Request } from "express";
-
 import { UserRepository } from "../../../../app/repository/UserRespository";
 
 export class UserCustomValidators{
-
-    constructor(){
-    }
 
     async isValidEmailUser(value: any){
 

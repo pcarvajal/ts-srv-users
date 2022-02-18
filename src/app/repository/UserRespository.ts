@@ -1,5 +1,3 @@
-
-
 import { IUserModel } from "../models/IUserModel";
 import { BaseRepository } from "./base/BaseRepository";
 import UserSchema from "../schemas/UserSchema";
