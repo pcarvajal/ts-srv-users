@@ -1,7 +1,6 @@
 import express, { Application } from 'express';
 import mongoose from "mongoose";
 
-import { UserRoutes } from "./config/routes/UserRoutes";
 import config from "./config/constants/Constants";
 import { MiddlewaresBase } from "./config/middlewares/base/MiddlewaresBase";
 
@@ -9,26 +8,18 @@ export default class App{
 
     private app: Application;
     private readonly port: string;
-    private apiPaths = {
-        users: '/api/users'
-    }
 
     constructor(){
         this.app = express();
         this.port = config.APP.PORT;
         this.database();
         this.middlewares();
-        this.routes();
-
     }
 
     middlewares(): void{
         this.app.use(MiddlewaresBase.configuration);
     }
 
-    routes(): void{
-        this.app.use( this.apiPaths.users, new UserRoutes().routes );
-    }
 
     database(): void{
         mongoose.connect(config.DB.URI);

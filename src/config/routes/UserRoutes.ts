@@ -14,7 +14,7 @@ export class UserRoutes {
     get routes () : express.Router {
         
         var controller = this.userController;
-        router.post("/",createUserSchema, ExpressValidatorRequest.validateRequest  , controller.createUser);
+        router.post("/users",createUserSchema, ExpressValidatorRequest.validateRequest  , controller.createUser);
 
         return router;
     }

@@ -2,6 +2,9 @@ import { UserRepository } from "../../../../app/repository/UserRespository";
 
 export class UserCustomValidators{
 
+    constructor(){
+    }
+
     async isValidEmailUser(value: any){
 
         const userRepository = new UserRepository();
