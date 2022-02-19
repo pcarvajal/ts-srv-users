@@ -2,9 +2,9 @@ export const options = {
 	definition:{
 		openapi: "3.0.0",
 		info:{
-			title: "User service codominium",
+			title: "User service",
 			version: "1.0.0",
-			description: "Maneja usuarios de condominio"
+			description: "Manage users service "
 		},
 		servers: [
 			{
