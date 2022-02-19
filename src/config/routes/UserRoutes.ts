@@ -104,7 +104,7 @@ export class UserRoutes {
 		 *                items:
 		 *                  $ref: '#/components/schemas/Error'
 		 *        500:
-		 *          description: Validation error
+		 *          description: Server error
 		 *          content:
 		 *            application/json:
 		 *              schema:
